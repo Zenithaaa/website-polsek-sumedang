@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* TailwindCSS v4.1 Custom Font Configuration */
+@theme {
+  /* Font families */
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Poppins", sans-serif;
+  
+  /* Font families with specific weights */
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}

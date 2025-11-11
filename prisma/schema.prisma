@@ -1,0 +1,123 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Enum untuk peran pengguna. Memastikan hanya ada dua nilai yang valid.
+
+enum Role {
+  ADMIN
+  USER // Untuk ekspansi di masa depan
+}
+
+// Enum untuk status berita. Mencegah typo dan memastikan konsistensi data.
+
+enum Status {
+  DRAFT
+  PUBLISHED
+}
+
+// Model untuk tabel 'users'
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique @map("username") @db.VarChar(100)
+  password  String   @map("password") @db.VarChar(255) // Simpan password yang sudah di-hash (bukan plain text)
+  role      Role     @default(ADMIN)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relasi ke model Berita. Satu user bisa menulis banyak berita.
+  beritas Berita[]
+
+  // Menentukan nama tabel di database menjadi 'users'
+  name          String
+  email         String
+  emailVerified Boolean   @default(false)
+  image         String?
+  sessions      Session[]
+  accounts      Account[]
+
+  @@map("users")
+  @@unique([email])
+}
+
+// Model untuk tabel 'berita'
+
+model Berita {
+  id               Int       @id @default(autoincrement())
+  judul            String    @map("judul") @db.VarChar(255)
+  slug             String    @unique @map("slug") @db.VarChar(255) // Slug harus unik untuk URL
+  konten           String    @map("konten") @db.Text
+  gambar           String?   @map("gambar") @db.VarChar(255) // '?' berarti field ini bisa null (opsional)
+  status           Status    @default(DRAFT)
+  tanggalPublikasi DateTime? @map("tanggal_publikasi") // '?' karena berita draft belum tentu punya tanggal publikasi
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+
+  // Foreign Key untuk menghubungkan ke tabel User
+  authorId Int @map("author_id")
+
+  // Relasi ke model User. Banyak berita ditulis oleh satu user (author).
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  // Menentukan nama tabel di database menjadi 'berita'
+  @@map("berita")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now()) @updatedAt
+
+  @@map("verification")
+}

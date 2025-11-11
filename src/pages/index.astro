@@ -1,11 +1,116 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+import "../styles/fonts.css";
 ---
 
 <Layout>
-	<Welcome />
+	<div class="min-h-screen bg-gray-50 p-8">
+		<div class="max-w-6xl mx-auto space-y-12">
+			<!-- Header -->
+			<div class="text-center space-y-4">
+				<h1 class="text-5xl font-bold text-gray-900">Font Configuration Test</h1>
+				<p class="text-lg text-gray-600">Testing Custom Fonts in Astro.js v5 + TailwindCSS v4.1</p>
+			</div>
+
+			<!-- Inter Font Tests -->
+			<section class="space-y-6">
+				<h2 class="text-3xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2">Inter Font (Local)</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<h3 class="text-xl font-semibold mb-4 text-gray-700">Regular Inter Font</h3>
+						<p class="text-base font-inter mb-2">The quick brown fox jumps over the lazy dog</p>
+						<p class="text-sm text-gray-500">font-inter class with normal weight</p>
+					</div>
+					
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<h3 class="text-xl font-semibold mb-4 text-gray-700">Bold Inter Font</h3>
+						<p class="text-base font-inter font-bold mb-2">The quick brown fox jumps over the lazy dog</p>
+						<p class="text-sm text-gray-500">font-inter class with font-bold</p>
+					</div>
+				</div>
+
+				<!-- Inter Variable Weights -->
+				<div class="bg-white p-6 rounded-lg shadow-md">
+					<h3 class="text-xl font-semibold mb-4 text-gray-700">Inter Variable Weights</h3>
+					<div class="space-y-2">
+						<p class="font-inter" style="font-weight: 100;">Weight 100 - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-inter" style="font-weight: 300;">Weight 300 - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-inter" style="font-weight: 400;">Weight 400 - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-inter" style="font-weight: 500;">Weight 500 - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-inter" style="font-weight: 600;">Weight 600 - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-inter" style="font-weight: 700;">Weight 700 - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-inter" style="font-weight: 800;">Weight 800 - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-inter" style="font-weight: 900;">Weight 900 - The quick brown fox jumps over the lazy dog</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Poppins Font Tests -->
+			<section class="space-y-6">
+				<h2 class="text-3xl font-bold text-gray-800 border-b-2 border-green-500 pb-2">Poppins Font (Local)</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<h3 class="text-xl font-semibold mb-4 text-gray-700">Regular Poppins Font</h3>
+						<p class="text-base font-poppins mb-2">The quick brown fox jumps over the lazy dog</p>
+						<p class="text-sm text-gray-500">font-poppins class with normal weight</p>
+					</div>
+					
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<h3 class="text-xl font-semibold mb-4 text-gray-700">Bold Poppins Font</h3>
+						<p class="text-base font-poppins font-bold mb-2">The quick brown fox jumps over the lazy dog</p>
+						<p class="text-sm text-gray-500">font-poppins class with font-bold</p>
+					</div>
+				</div>
+
+				<!-- Poppins Weights -->
+				<div class="bg-white p-6 rounded-lg shadow-md">
+					<h3 class="text-xl font-semibold mb-4 text-gray-700">Poppins Weights</h3>
+					<div class="space-y-2">
+						<p class="font-poppins" style="font-weight: 100;">Weight 100 (Thin) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 200;">Weight 200 (ExtraLight) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 300;">Weight 300 (Light) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 400;">Weight 400 (Regular) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 500;">Weight 500 (Medium) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 600;">Weight 600 (SemiBold) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 700;">Weight 700 (Bold) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 800;">Weight 800 (ExtraBold) - The quick brown fox jumps over the lazy dog</p>
+						<p class="font-poppins" style="font-weight: 900;">Weight 900 (Black) - The quick brown fox jumps over the lazy dog</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- TailwindCSS Default Font Tests -->
+			<section class="space-y-6">
+				<h2 class="text-3xl font-bold text-gray-800 border-b-2 border-purple-500 pb-2">TailwindCSS Default Fonts</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<h3 class="text-xl font-semibold mb-4 text-gray-700">Default Sans (Inter)</h3>
+						<p class="text-base sans mb-2">The quick brown fox jumps over the lazy dog</p>
+						<p class="text-sm text-gray-500">Using default 'sans' class (Inter)</p>
+					</div>
+					
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<h3 class="text-xl font-semibold mb-4 text-gray-700">Serif (Poppins)</h3>
+						<p class="text-base serif mb-2">The quick brown fox jumps over the lazy dog</p>
+						<p class="text-sm text-gray-500">Using 'serif' class (Poppins)</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Instructions -->
+			<section class="bg-blue-50 p-8 rounded-lg border border-blue-200">
+				<h2 class="text-2xl font-bold text-blue-800 mb-4">📋 Configuration Summary</h2>
+				<div class="space-y-3 text-blue-700">
+					<p><strong>✅ Local Fonts:</strong> Inter dan Poppins sudah dikonfigurasi dengan @font-face</p>
+					<p><strong>✅ Google Fonts:</strong> Inter dan Poppins juga tersedia via Google Fonts CDN</p>
+					<p><strong>✅ TailwindCSS v4.1:</strong> Font families sudah diintegrasikan dengan @theme directive</p>
+					<p><strong>✅ Usage:</strong> <code>font-inter</code>, <code>font-poppins</code>, <code>sans</code>, <code>serif</code></p>
+				</div>
+			</section>
+		</div>
+	</div>
 </Layout>
