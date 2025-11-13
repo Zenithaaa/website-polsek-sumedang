@@ -1,0 +1,122 @@
+---
+// Static data for Criminal Case Services
+const layananPerkara = [
+  {
+    id: 1,
+    judul: "Laporan Perkara Pidana",
+    deskripsi: "Layanan untuk mengajukan laporan terkait perkara pidana yang terjadi di wilayah hukum Polsekta Fataleka. Proses cepat dan terpercaya dengan penanganan profesional.",
+    ikon: "shield-check"
+  },
+  {
+    id: 2,
+    judul: "Penyidikan Perkara",
+    deskripsi: "Proses investigasi dan pengumpulan bukti untuk perkara pidana. Dilakukan oleh investigator berpengalaman dengan prosedur yang transparan dan akuntabel.",
+    ikon: "magnifying-glass"
+  },
+  {
+    id: 3,
+    judul: "Penyelesaian Perkara",
+    deskripsi: "Layanan mediasi dan penyelesaian perkara melalui jalur praperadilan atau win-win solution untuk mencapai keadilan yang bermartabat.",
+    ikon: "scale"
+  },
+  {
+    id: 4,
+    judul: "Konsultasi Hukum",
+    deskripsi: "Konsultasi gratis terkait procedimientos hukum perkara pidana. Tim lawyer professional siap memberikan advise dan guidance yang tepat.",
+    ikon: "chat-bubble-left"
+  },
+  {
+    id: 5,
+    judul: "Pelayanan Informasi",
+    deskripsi: "Informasi real-time terkait status perkera yang sedang ditangani. Sistem tracking yang memudahkan masyarakat untuk memonitor perkembangan kasus.",
+    ikon: "information-circle"
+  },
+  {
+    id: 6,
+    judul: "Dukungan Victim",
+    deskripsi: "Program dukungan untuk korban perkara pidana meliputi asistensi psikologis, pendampingan hukum, dan bantuan pemulihan dampak trauma.",
+    ikon: "heart"
+  }
+];
+---
+
+<!-- Pelayanan Perkara Pidana Section -->
+<section id="pelayanan-perkara" class="w-full bg-white py-20">
+  <div class="container mx-auto px-6">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-4">
+      <h2 class="text-3xl md:text-4xl font-poppins font-bold text-primary">
+        Pelayanan Perkara Pidana
+      </h2>
+    </div>
+    
+    <!-- Section Description -->
+    <div class="text-center mb-12">
+      <p class="text-gray-600 text-lg font-inter max-w-2xl mx-auto">
+        Kami menyediakan berbagai layanan untuk memudahkan proses penanganan perkara pidana dengan profesionalisme dan transparansi tinggi.
+      </p>
+    </div>
+    
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {layananPerkara.map((layanan) => (
+        <div class="bg-gray-50 rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-primary transition-all duration-300">
+          <!-- Service Icon -->
+          <div class="mb-4">
+            {layanan.ikon === "shield-check" && (
+              <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            )}
+            {layanan.ikon === "magnifying-glass" && (
+              <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            )}
+            {layanan.ikon === "scale" && (
+              <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+              </svg>
+            )}
+            {layanan.ikon === "chat-bubble-left" && (
+              <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            )}
+            {layanan.ikon === "information-circle" && (
+              <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            )}
+            {layanan.ikon === "heart" && (
+              <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            )}
+          </div>
+          
+          <!-- Service Title -->
+          <h3 class="text-xl font-poppins font-semibold text-gray-900 mb-3">
+            {layanan.judul}
+          </h3>
+          
+          <!-- Service Description -->
+          <p class="text-base font-inter text-gray-600 line-clamp-3">
+            {layanan.deskripsi}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Custom styles for line-clamp -->
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

@@ -1,0 +1,256 @@
+---
+// Static data for BAP Creation procedures
+const babData = [
+  {
+    id: 1,
+    judul: "Kehilangan STNK",
+    persyaratan: [
+      "Surat laporan kehilangan dari perumahan tempat kejadian",
+      "Fotocopy KTP dan KK yang masih berlaku",
+      "Fotocopy STNK asli (jika ada)",
+      "Surat keterangan hilang dari kepolisian",
+      "Kuitansi pembayaran pajak STNK terakhir",
+      "Pas foto 3x4 background merah 2 lembar"
+    ],
+    prosedur: [
+      "Datang ke humas kepolisian dengan membawa semua persyaratan",
+      "Mengisi formulir permohonan duplikat STNK",
+      "Melakukan verifikasi dokumen oleh petugas",
+      "Membayar biaya administrasi di loket pembayaran",
+      "Menunggu proses pembuatan duplikat STNK (1-3 hari kerja)",
+      "Mengambil duplikat STNK yang sudah selesai"
+    ]
+  },
+  {
+    id: 2,
+    judul: "Kehilangan Kendaraan",
+    persyaratan: [
+      "Surat laporan kehilangan dari perumahan tempat kejadian",
+      "Fotocopy KTP dan KK yang masih berlaku",
+      "Fotocopy STNK dan BPKB asli (jika ada)",
+      "Surat keterangan hilang dari kepolisian",
+      "Pas foto 3x4 background merah 2 lembar",
+      "Surat keterangan administratif pembayaran pajak kendaraan"
+    ],
+    prosedur: [
+      "Melaporkan kehilangan kendaraan keolisian setempat",
+      "Mengumpulkan semua dokumen persyaratan",
+      "Datang ke humas untuk penetapan status kendaraan hilang",
+      "Mengisi formulir permohonan pencarian kendaraan hilang",
+      "Verifikasi dan penelitian lapangan oleh petugas",
+      "Menunggu hasil penyelidikan dan pembuatan Berita Acara"
+    ]
+  },
+  {
+    id: 3,
+    judul: "Tabrakan Lalu Lintas",
+    persyaratan: [
+      "Surat laporan kejadian dari місія occurred",
+      "Fotocopy KTP semua envolvidos dalam kejadian",
+      "Fotocopy SIM dan STNK semua kendaraan terlibat",
+      "Dokumentasi foto kejadian (jika ada)",
+      "Surat keterangan saksi mata",
+      "Bukti kepemilikan kendaraan (BPKB/STNK)"
+    ],
+    prosedur: [
+      "Melaporkan kejadian tabrakan ke서비스 pembinaan jalur_TRANSPORT 양산)",
+      "Petugas turun ke места kejadian untuk ol场所TKP",
+      "Pengumpulan keterangan dari semua terlibat dan saksi",
+      "Pengumpulan alat bukti dan dokumentasi",
+      "Pembuatan sk高于现场的 stenografia kejadian",
+      "Penyelesaian administrasi dan pembuatan Berita Acara"
+    ]
+  },
+  {
+    id: 4,
+    judul: "Pencurian Kendaraan",
+    persyaratan: [
+      "Surat laporan kehilangan dari perumahan tempat kejadian",
+      "Fotocopy KTP dan KK yang masih berlaku",
+      "Fotocopy STNK dan BPKB asli",
+      "Surat keterangan kehilangan dari kepemimpinan복권 perdido perintah kehilangan",
+      "Surat keterangan saksi dari tetangga atau security",
+      "Dokumentasi foto kendaraan sebelum hilang"
+    ],
+    prosedur: [
+      "Melaporkan langsung ke chúa perdendo kehilangan kendaraan",
+      "Petugas datang ke tempat kejadian untuk pengecekan",
+      "Pengumpulan keterangan pelapor dan saksi",
+      "Pembuatan Berita Acara kehilangan kendaraan",
+      "Pencarian dan penyelidikan oleh Unit req직воля recherche",
+      "Follow up berkala terhadap perkembangan penyelidikan"
+    ]
+  },
+  {
+    id: 5,
+    judul: "Kehilangan BPKB",
+    persyaratan: [
+      "Surat keterangan kehilangan dari perumahan",
+      "Fotocopy KTP dan KK yang masih berlaku",
+      "Fotocopy STNK yang masih berlaku",
+      "Surat keterangan kehilangan dari kepolisian",
+      "Surat keterangan dari kantor menurunkan pelayanan STNK",
+      "Pas foto 3x4Background merah 2 lembar"
+    ],
+    prosedur: [
+      "Datang ke Humas充anto aja все nouveau BPKB",
+      "Mengisi formulir permohonan duplikat BPKB",
+      "Verifikasi dokumen dan kepemilikan kendaraan",
+      "Pembayaran biaya administrasi duplikat BPKB",
+      "Proses pembuatan BPKB duplikat (5-7 hari kerja)",
+      "Pengambilan BPKB duplikat dengan surat kuasa"
+    ]
+  },
+  {
+    id: 6,
+    judul: "Perubahan Data Kendaraan",
+    persyaratan: [
+      "STNK asli dan fotocopy",
+      "BPKB asli dan fotocopy",
+      "Fotocopy KTP yang masih berlaku",
+      "Surat keterangan perubahan dari kantor pameran kendaraan",
+      "Dokumentasi perubahan (sebelum dan sesudah)",
+      "Bukti pembayaran pajak kendaraan год terakhir"
+    ],
+    prosedur: [
+      "Datang ke Uangpan Pelayanan Umum dengan semua dokumen",
+      "Pengisian formulir permohonan perubahan data",
+      "Verifikasi dokumen oleh petugas pelayanan",
+      "Pemeriksaan fisik kendaraan (jika diperlukan)",
+      "Pembayaran biaya administrasi perubahan",
+      "Pencatatan perubahan dan pencetakan dokumen baru"
+    ]
+  }
+];
+---
+
+<!-- Pembuatan BAP Section -->
+  <section id="pembuatan-bap" class="w-full bg-gray-50 py-20">
+  <div class="container mx-auto px-6">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-4">
+      <h2 class="text-3xl md:text-4xl font-poppins font-bold text-primary">
+        Pembuatan BAP
+      </h2>
+    </div>
+    
+    <!-- Section Description -->
+    <div class="text-center mb-12">
+      <p class="text-gray-600 text-lg font-inter max-w-2xl mx-auto">
+        Informasi lengkap mengenai prosedur dan persyaratan pembuatan Berita Acara Pemeriksaan (BAP) untuk berbagai keperluan.
+      </p>
+    </div>
+    
+    <!-- Accordion Container -->
+    <div class="max-w-4xl mx-auto space-y-4">
+      {babData.map((bab) => (
+        <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+          <!-- Accordion Trigger Button -->
+          <button 
+            class="w-full p-6 flex justify-between items-center hover:bg-gray-100 transition-colors duration-200"
+            data-accordion-target={`#panel-${bab.id}`}
+            aria-expanded="false"
+          >
+            <h3 class="text-lg font-poppins font-semibold text-primary text-left">
+              {bab.judul}
+            </h3>
+            <svg 
+              class="w-5 h-5 text-primary transition-transform duration-300 transform"
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              data-accordion-icon
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <!-- Accordion Content Panel -->
+          <div 
+            id={`panel-${bab.id}`}
+            class="hidden p-6 pt-0"
+            data-accordion-panel
+          >
+            <div class="space-y-6">
+              <!-- Persyaratan Section -->
+              <div>
+                <h4 class="text-base font-inter font-semibold text-gray-900 mb-3">
+                  Persyaratan:
+                </h4>
+                <ul class="space-y-2">
+                  {bab.persyaratan.map((persyaratan, index) => (
+                    <li class="text-base font-inter text-gray-600 flex items-start">
+                      <span class="text-primary mr-2 mt-1.5 w-1.5 h-1.5 bg-primary rounded-full shrink-0"></span>
+                      {persyaratan}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <!-- Prosedur Section -->
+              <div>
+                <h4 class="text-base font-inter font-semibold text-gray-900 mb-3">
+                  Prosedur:
+                </h4>
+                <ul class="space-y-2">
+                  {bab.prosedur.map((prosedur, index) => (
+                    <li class="text-base font-inter text-gray-600 flex items-start">
+                      <span class="text-primary mr-2 mt-1.5 w-1.5 h-1.5 bg-primary rounded-full shrink-0"></span>
+                      {prosedur}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Accordion JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordionButtons = document.querySelectorAll('[data-accordion-target]');
+    
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        const currentButton = event.currentTarget as HTMLButtonElement;
+        const targetId = currentButton.getAttribute('data-accordion-target');
+        if (!targetId) return;
+        const targetPanel = document.querySelector(targetId);
+        const icon = currentButton.querySelector('[data-accordion-icon]');
+        const isExpanded = currentButton.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other accordion items
+        accordionButtons.forEach(otherButton => {
+          if (otherButton !== currentButton) {
+            const otherTargetId = otherButton.getAttribute('data-accordion-target');
+            if (!otherTargetId) return;
+            const otherTargetPanel = document.querySelector(otherTargetId);
+            const otherIcon = otherButton.querySelector('[data-accordion-icon]');
+            
+            if (otherTargetPanel) otherTargetPanel.classList.add('hidden');
+            otherButton.setAttribute('aria-expanded', 'false');
+            if (otherIcon) otherIcon.classList.remove('rotate-180');
+          }
+        });
+        
+        // Toggle current accordion item
+        if (targetPanel) {
+          if (isExpanded) {
+            targetPanel.classList.add('hidden');
+            currentButton.setAttribute('aria-expanded', 'false');
+            if (icon) icon.classList.remove('rotate-180');
+          } else {
+            targetPanel.classList.remove('hidden');
+            currentButton.setAttribute('aria-expanded', 'true');
+            if (icon) icon.classList.add('rotate-180');
+          }
+        }
+      });
+    });
+  });
+</script>

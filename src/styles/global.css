@@ -10,4 +10,46 @@
   /* Font families with specific weights */
   --font-inter: "Inter", sans-serif;
   --font-poppins: "Poppins", sans-serif;
+  
+  /* Color Variables */
+  --color-primary: #003366;
+  --color-accent: #FFC107;
+  
+  /* Admin Button Styles */
+  --admin-button-bg: var(--color-accent);
+  --admin-button-text: #1F2937;
+  --admin-button-hover-bg: #D97706;
+  
+  /* Navigation Styles */
+  --nav-primary-bg: var(--color-primary);
+  --mobile-nav-bg: var(--color-primary);
+}
+
+/* Custom styles using CSS variables */
+.admin-button {
+  background-color: var(--admin-button-bg);
+  color: var(--admin-button-text);
+}
+
+.admin-button:hover {
+  background-color: var(--admin-button-hover-bg);
+}
+
+.nav-primary {
+  background-color: var(--nav-primary-bg);
+}
+
+.mobile-nav {
+  background-color: var(--mobile-nav-bg);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Global Styles */
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
 }
