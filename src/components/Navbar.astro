@@ -1,18 +1,17 @@
 ---
 // Props untuk conditional rendering admin access
-const { isLoggedIn = false, userName = '' } = Astro.props;
-import LogoImage from '../assets/image/Logo_Bareskrim_Polri.png';
+const { isLoggedIn = false, userName = "" } = Astro.props;
+import LogoImage from "../assets/image/Logo_Bareskrim_Polri.png";
 ---
 
 <!-- Main Navbar Container -->
 <nav class="fixed top-0 w-full z-50 shadow-lg nav-primary">
   <div class="mx-auto px-4 md:px-10 py-2">
     <div class="flex items-center justify-between">
-      
       <!-- Left Section: Brand Logo and Text -->
       <a href="/" class="flex items-center space-x-3">
         <!-- Logo -->
-        <img src={LogoImage.src} alt="Logo" class="h-12 w-auto">
+        <img src={LogoImage.src} alt="Logo" class="h-12 w-auto" />
         <div class="text-yellow-400">
           <div class="text-[20px] font-bold font-poppins leading-tight">
             POLRES
@@ -25,31 +24,59 @@ import LogoImage from '../assets/image/Logo_Bareskrim_Polri.png';
 
       <!-- Center Section: Navigation Menu (Desktop) -->
       <div class="hidden lg:flex items-center space-x-6">
-        <a href="#hero" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+        <a
+          href="#hero"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Beranda
         </a>
-        <a href="#visi-misi" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+        <a
+          href="#visi-misi"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Visi & Misi
         </a>
-        <a href="#arti-logo-reserse" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+        <!-- 
+        <a
+          href="#arti-logo-reserse"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Arti Logo
         </a>
-          <a href="#susunan-organisasi" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+        
+        <a
+          href="#susunan-organisasi"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Organisasi
         </a>
-        <a href="#pelayanan-perkara" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+        -->
+        <a
+          href="#pelayanan-perkara"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Pelayanan Perkara
         </a>
-        <a href="#pembuatan-bap" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+        <a
+          href="#pembuatan-bap"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Pembuatan BAP
         </a>
-        <a href="#pelayanan-sidik-jari" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+        <!-- 
+        <a
+          href="#pelayanan-sidik-jari"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Pelayanan Sidik Jari
         </a>
-        <a href="#berita" class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins">
+      -->
+        <a
+          href="#berita"
+          class="text-white text-base no-underline py-2 hover:text-yellow-400 transition duration-300 font-poppins"
+        >
           Berita
         </a>
-
       </div>
 
       <!-- Right Section: Admin Access (Hidden) -->
@@ -58,46 +85,101 @@ import LogoImage from '../assets/image/Logo_Bareskrim_Polri.png';
       </div>
 
       <!-- Mobile Menu Button (Hamburger/X Toggle) -->
-      <button class="lg:hidden text-white h-6 w-6 ml-auto" id="mobile-menu-button">
+      <button
+        class="lg:hidden text-white h-6 w-6 ml-auto"
+        id="mobile-menu-button"
+      >
         <!-- Hamburger Icon -->
-        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <svg
+          id="hamburger-icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
         <!-- X Icon (hidden by default) -->
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        <svg
+          id="close-icon"
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu (Hidden by default) -->
-  <div class="lg:hidden border-t border-gray-700 hidden" id="mobile-menu" style="background-color: var(--color-primary);">
+  <div
+    class="lg:hidden border-t border-gray-700 hidden"
+    id="mobile-menu"
+    style="background-color: var(--color-primary);"
+  >
     <div class="px-4 py-2">
-      <a href="/" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins">
+      <a
+        href="/"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Beranda
       </a>
-      <a href="#visi-misi" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"> 
+      <a
+        href="#visi-misi"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Visi & Misi
       </a>
-      <a href="#pelayanan-perkara" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins">
+      <a
+        href="#pelayanan-perkara"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Pelayanan Perkara
       </a>
-      <a href="#pembuatan-bap" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins">
+      <a
+        href="#pembuatan-bap"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Pembuatan BAP
       </a>
-      <a href="#pelayanan-sidik-jari" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins">
+      <!-- 
+      <a
+        href="#pelayanan-sidik-jari"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Pelayanan Sidik Jari
       </a>
-      <a href="#berita" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins">
+      -->
+      <a
+        href="#berita"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Berita
       </a>
-      <a href="#arti-logo-reserse" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins">
+      <!-- 
+      <a
+        href="#arti-logo-reserse"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Arti Logo
       </a>
-      <a href="#susunan-organisasi" class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins">
+      <a
+        href="#susunan-organisasi"
+        class="block py-3 px-4 text-white no-underline border-t border-gray-700 font-poppins"
+      >
         Organisasi
       </a>
+      -->
       <div class="border-t border-gray-700 pt-3 mt-3">
         <!-- Admin access removed from all screen sizes -->
       </div>
@@ -107,26 +189,26 @@ import LogoImage from '../assets/image/Logo_Bareskrim_Polri.png';
 
 <!-- JavaScript for Mobile Menu Toggle with Icon Toggle -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
     if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
-      mobileMenuButton.addEventListener('click', function() {
+      mobileMenuButton.addEventListener("click", function () {
         // Toggle mobile menu
-        mobileMenu.classList.toggle('hidden');
-        
+        mobileMenu.classList.toggle("hidden");
+
         // Toggle between hamburger and close icons
-        if (mobileMenu.classList.contains('hidden')) {
+        if (mobileMenu.classList.contains("hidden")) {
           // Menu is now closed - show hamburger
-          hamburgerIcon.classList.remove('hidden');
-          closeIcon.classList.add('hidden');
+          hamburgerIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
         } else {
           // Menu is now open - show close icon
-          hamburgerIcon.classList.add('hidden');
-          closeIcon.classList.remove('hidden');
+          hamburgerIcon.classList.add("hidden");
+          closeIcon.classList.remove("hidden");
         }
       });
     }

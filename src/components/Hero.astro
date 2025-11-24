@@ -1,13 +1,13 @@
 ---
 // Import background image
-import HeroBackground from '../assets/image/HeroBackground.jpg';
+import HeroBackground from "../assets/image/HeroBackground.jpg";
 
 // Hero component props (if needed for customization)
-const { 
-  title = "POLRES SUMEDANG: MELAYANI, MELINDUNGI, DAN MENGAYOMI MASYARAKAT",
-  subtitle = "Bersama masyarakat, kami membangun Sumedang yang aman dan tertib",
+const {
+  title = "SATUAN RESERSE KRIMINAL POLRES SUMEDANG",
+  subtitle = "Sidik Sakti Idera Waspada",
   ctaText = "Lihat Layanan Kami",
-  ctaHref = "#pelayanan-perkara"
+  ctaHref = "#pelayanan-perkara",
 } = Astro.props;
 
 // Generate the background image URL
@@ -15,70 +15,84 @@ const backgroundImageUrl = HeroBackground.src;
 ---
 
 <!-- Hero Section -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style={`background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('${backgroundImageUrl}')`}>
-  
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+  style={`background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('${backgroundImageUrl}')`}
+>
   <!-- Content Container -->
   <div class="text-center px-6 max-w-4xl mx-auto">
-    
     <!-- Main Title -->
-    <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-poppins font-extrabold mb-6 drop-shadow-2xl">
+    <h1
+      class="text-white text-4xl md:text-6xl lg:text-7xl font-poppins font-extrabold mb-6 drop-shadow-2xl"
+    >
       {title}
     </h1>
-    
+
     <!-- Subtitle -->
     <p class="text-white/90 text-lg md:text-xl font-inter font-light mb-10">
       {subtitle}
     </p>
-    
+
     <!-- Call to Action Button -->
-    <a 
+    <a
       href={ctaHref}
       id="cta-button"
       class="inline-block bg-accent text-gray-900 font-semibold text-base py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-amber-500 hover:scale-105 hover:shadow-lg"
     >
       {ctaText}
     </a>
-    
   </div>
-  
+
   <!-- Smooth Scroll Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const ctaButton = document.getElementById('cta-button');
-      
+    document.addEventListener("DOMContentLoaded", function () {
+      const ctaButton = document.getElementById("cta-button");
+
       if (ctaButton) {
-        ctaButton.addEventListener('click', function(e) {
+        ctaButton.addEventListener("click", function (e) {
           e.preventDefault();
-          
-          const targetId = ctaButton.getAttribute('href');
-          
-          if (targetId && targetId.startsWith('#')) {
+
+          const targetId = ctaButton.getAttribute("href");
+
+          if (targetId && targetId.startsWith("#")) {
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
-               // Calculate offset for fixed navbar
-               const navbarHeight = 80; // Adjust based on navbar height
-               const targetPosition = (targetElement as HTMLElement).offsetTop - navbarHeight;
-               
-               // Smooth scroll to target
-               window.scrollTo({
-                 top: targetPosition,
-                 behavior: 'smooth'
-               });
-             }
+              // Calculate offset for fixed navbar
+              const navbarHeight = 80; // Adjust based on navbar height
+              const targetPosition =
+                (targetElement as HTMLElement).offsetTop - navbarHeight;
+
+              // Smooth scroll to target
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
           }
         });
       }
     });
   </script>
-  
+
   <!-- Optional: Decorative Elements -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+  >
+    <svg
+      class="w-6 h-6 text-white/70"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
     </svg>
   </div>
-  
 </section>
 
 <!-- Optional: CSS for additional styling -->
@@ -86,7 +100,7 @@ const backgroundImageUrl = HeroBackground.src;
   section {
     background-attachment: fixed;
   }
-  
+
   @media (max-width: 768px) {
     section {
       background-attachment: scroll;
